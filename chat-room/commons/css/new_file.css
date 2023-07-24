@@ -1,0 +1,14 @@
+	<view>
+		<view class="top-bar">
+			<view class="top-bar-left" @click="backone">
+				，<span>返回</span>
+			</view>
+			<view class="top-bar-center">
+				
+			</view>
+			<view class="top-bar-right">
+				
+			</view>
+		</view>
+		
+	</view>
