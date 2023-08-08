@@ -280,7 +280,16 @@ var render = function () {
           _c(
             "uni-view",
             { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            [_c("v-uni-image", { attrs: { src: _vm._$g(3, "a-src"), _i: 3 } })],
+            [
+              _c("v-uni-image", {
+                attrs: { src: _vm._$g(3, "a-src"), _i: 3 },
+                on: {
+                  click: function ($event) {
+                    return _vm.$handleViewEvent($event)
+                  },
+                },
+              }),
+            ],
             1
           ),
           _c(
@@ -331,38 +340,82 @@ var render = function () {
         "uni-view",
         { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
         [
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-            [
-              _c(
+          _vm._$g(12, "i")
+            ? _c(
                 "uni-view",
-                { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+                { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
                 [
+                  _c("v-uni-image", {
+                    attrs: { src: _vm._$g(13, "a-src"), mode: "", _i: 13 },
+                  }),
                   _c(
                     "uni-view",
                     { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                    [_vm._v("下拉刷新")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+          _vm._$g(15, "i")
+            ? _c(
+                "uni-view",
+                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                [
+                  _c("v-uni-image", {
+                    attrs: {
+                      src: _vm._$g(16, "a-src"),
+                      mode: "aspectFill",
+                      _i: 16,
+                    },
+                  }),
+                  _c("uni-view", {
+                    staticClass: _vm._$g(17, "sc"),
+                    attrs: { _i: 17 },
+                  }),
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                    [_vm._v("发现好友")]
+                  ),
+                ],
+                1
+              )
+            : _vm._e(),
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticClass: _vm._$g(20, "sc"),
+                  attrs: { _i: 20 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "uni-view",
+                    { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
                     [
                       _c(
                         "i",
-                        { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                        { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
                         [_vm._v("1")]
                       ),
                       _c(
-                        "v-uni-navigator",
-                        {
-                          attrs: {
-                            "hover-class": "none",
-                            url: "../userMessage/userMessage",
-                            _i: 16,
-                          },
-                        },
+                        "uni-view",
+                        { attrs: { _i: 23 } },
                         [
                           _c("v-uni-image", {
                             attrs: {
-                              src: _vm._$g(17, "a-src"),
+                              src: _vm._$g(24, "a-src"),
                               mode: "",
-                              _i: 17,
+                              _i: 24,
                             },
                           }),
                         ],
@@ -373,25 +426,25 @@ var render = function () {
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                    { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
                     [
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+                        { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
                         [
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(20, "sc"),
-                              attrs: { _i: 20 },
+                              staticClass: _vm._$g(27, "sc"),
+                              attrs: { _i: 27 },
                             },
-                            [_vm._v("都知道")]
+                            [_vm._v("好友申请")]
                           ),
                           _c(
                             "uni-view",
                             {
-                              staticClass: _vm._$g(21, "sc"),
-                              attrs: { _i: 21 },
+                              staticClass: _vm._$g(28, "sc"),
+                              attrs: { _i: 28 },
                             },
                             [_vm._v("13:37")]
                           ),
@@ -400,12 +453,8 @@ var render = function () {
                       ),
                       _c(
                         "uni-view",
-                        { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
-                        [
-                          _vm._v(
-                            "我是猪猪侠V我50dasdasdasdasdsadasddasdsadasdasdsadasd"
-                          ),
-                        ]
+                        { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
+                        [_vm._v("茫茫人海，找到便是缘分~~~")]
                       ),
                     ],
                     1
@@ -413,130 +462,102 @@ var render = function () {
                 ],
                 1
               ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                    [
-                      _c(
-                        "i",
-                        { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
-                        [_vm._v("1")]
-                      ),
-                      _c("v-uni-image", {
-                        attrs: { src: _vm._$g(26, "a-src"), mode: "", _i: 26 },
-                      }),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
-                    [
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
-                        [
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g(29, "sc"),
-                              attrs: { _i: 29 },
-                            },
-                            [_vm._v("都知道")]
-                          ),
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g(30, "sc"),
-                              attrs: { _i: 30 },
-                            },
-                            [_vm._v("13:37")]
-                          ),
-                        ],
-                        1
-                      ),
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
-                        [
-                          _vm._v(
-                            "我是猪猪侠V我50dasdasdasdasdsadasddasdsadasdasdsadasd"
-                          ),
-                        ]
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
-                    [
-                      _c(
-                        "i",
-                        { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                        [_vm._v("1")]
-                      ),
-                      _c("v-uni-image", {
-                        attrs: { src: _vm._$g(35, "a-src"), mode: "", _i: 35 },
-                      }),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
-                    [
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
-                        [
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g(38, "sc"),
-                              attrs: { _i: 38 },
-                            },
-                            [_vm._v("都知道")]
-                          ),
-                          _c(
-                            "uni-view",
-                            {
-                              staticClass: _vm._$g(39, "sc"),
-                              attrs: { _i: 39 },
-                            },
-                            [_vm._v("13:37")]
-                          ),
-                        ],
-                        1
-                      ),
-                      _c(
-                        "uni-view",
-                        { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
-                        [
-                          _vm._v(
-                            "我是猪猪侠V我50dasdasdasdasdsadasddasdsadasdasdsadasd"
-                          ),
-                        ]
-                      ),
-                    ],
-                    1
-                  ),
-                ],
-                1
-              ),
+              _vm._l(_vm._$g(30, "f"), function (item, index, $20, $30) {
+                return _c(
+                  "uni-view",
+                  {
+                    key: item,
+                    staticClass: _vm._$g("30-" + $30, "sc"),
+                    attrs: { _i: "30-" + $30 },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$handleViewEvent($event)
+                      },
+                    },
+                  },
+                  [
+                    _c(
+                      "uni-view",
+                      {
+                        staticClass: _vm._$g("31-" + $30, "sc"),
+                        attrs: { _i: "31-" + $30 },
+                      },
+                      [
+                        _c(
+                          "i",
+                          {
+                            staticClass: _vm._$g("32-" + $30, "sc"),
+                            attrs: { _i: "32-" + $30 },
+                          },
+                          [_vm._v(_vm._$g("32-" + $30, "t0-0"))]
+                        ),
+                        _c(
+                          "uni-view",
+                          { attrs: { _i: "33-" + $30 } },
+                          [
+                            _c("v-uni-image", {
+                              attrs: {
+                                src: _vm._$g("34-" + $30, "a-src"),
+                                mode: "",
+                                _i: "34-" + $30,
+                              },
+                            }),
+                          ],
+                          1
+                        ),
+                      ],
+                      1
+                    ),
+                    _c(
+                      "uni-view",
+                      {
+                        staticClass: _vm._$g("35-" + $30, "sc"),
+                        attrs: { _i: "35-" + $30 },
+                      },
+                      [
+                        _c(
+                          "uni-view",
+                          {
+                            staticClass: _vm._$g("36-" + $30, "sc"),
+                            attrs: { _i: "36-" + $30 },
+                          },
+                          [
+                            _c(
+                              "uni-view",
+                              {
+                                staticClass: _vm._$g("37-" + $30, "sc"),
+                                attrs: { _i: "37-" + $30 },
+                              },
+                              [_vm._v(_vm._$g("37-" + $30, "t0-0"))]
+                            ),
+                            _c(
+                              "uni-view",
+                              {
+                                staticClass: _vm._$g("38-" + $30, "sc"),
+                                attrs: { _i: "38-" + $30 },
+                              },
+                              [_vm._v("13:37")]
+                            ),
+                          ],
+                          1
+                        ),
+                        _c(
+                          "uni-view",
+                          {
+                            staticClass: _vm._$g("39-" + $30, "sc"),
+                            attrs: { _i: "39-" + $30 },
+                          },
+                          [_vm._v(_vm._$g("39-" + $30, "t0-0"))]
+                        ),
+                      ],
+                      1
+                    ),
+                  ],
+                  1
+                )
+              }),
             ],
-            1
+            2
           ),
         ],
         1
@@ -639,7 +660,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../HBuilder/HBuilderX.3.8.7.20230703/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n* {\r\n  margin: 0;\r\n  padding: 0;\n}\n.content {\r\n  padding-top: 34rpx;\n}\n.content .top-bar {\r\n  z-index: 50;\r\n  margin-top: var(--status-bar-height);\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 88rpx;\r\n  box-sizing: border-box;\r\n  border-bottom: 1px solid #rgba 39, 40, 50, 0.1;\n}\n.content .top-bar .top-bar-left {\r\n  margin-left: 40rpx;\n}\n.content .top-bar .top-bar-center {\r\n  flex: auto;\r\n  text-align: center;\n}\n.content .top-bar .top-bar-center .logo {\r\n  padding-top: 19rpx;\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.content .top-bar .top-bar-center .title {\r\n  font-size: 32rpx;\r\n  color: #272832;\n}\n.content .top-bar .top-bar-right .pice {\r\n  width: 88rpx;\n}\n.content .top-bar .top-bar-right .searchAuto {\r\n  width: 44rpx;\r\n  height: 44rpx;\r\n  display: inline-block;\n}\n.content .top-bar .top-bar-right uni-image {\r\n  width: 34px;\r\n  height: 34px;\r\n  border-radius: 8px;\n}\n.content .main {\r\n  padding-top: 88rpx;\r\n  width: 100%;\r\n  height: 100%;\n}\n.content .bottom-bar {\r\n  z-index: 8;\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  padding-bottom: 32rpx;\r\n  margin: env(safe-area-inset-bottom);\n}\n.content .bt1 {\r\n  margin: auto;\r\n  text-align: center;\r\n  line-height: 80rpx;\r\n  width: 684rpx;\r\n  height: 80rpx;\r\n  border-radius: 20rpx;\n}\n.top-bar {\r\n  background: rgba(244, 244, 244, 0.96);\r\n  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);\n}\n.top-bar .top-bar-left {\r\n  flex: 1;\n}\n.top-bar .top-bar-left uni-image {\r\n  padding-top: 8rpx;\r\n  width: 68rpx;\r\n  height: 68rpx;\r\n  border-radius: 16rpx;\n}\n.top-bar .top-bar-center {\r\n  margin-top: 6rpx;\r\n  flex: 1;\r\n  text-align: center;\n}\n.top-bar .top-bar-center uni-image {\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.top-bar .top-bar-right {\r\n  margin-top: 6rpx;\r\n  margin-left: 40rpx;\r\n  flex: 1;\r\n  display: flex;\n}\n.top-bar .top-bar-right .search {\r\n  flex: auto;\n}\n.top-bar .top-bar-right .search uni-image {\r\n  width: 48rpx;\r\n  height: 48rpx;\n}\n.top-bar .top-bar-right .add {\r\n  flex: auto;\n}\n.top-bar .top-bar-right .add uni-image {\r\n  width: 48rpx;\r\n  height: 48rpx;\n}\n.main .friends {\r\n  padding-top: var(--status-bar-height);\r\n  background-color: #fff;\n}\n.main .friends .friends-list {\r\n  display: flex;\r\n  width: 100%;\r\n  margin: 28rpx 0;\n}\n.main .friends .friends-list:active {\r\n  background-color: #fff;\n}\n.main .friends .friends-list .friends-list-l {\r\n  position: relative;\n}\n.main .friends .friends-list .friends-list-l uni-image {\r\n  margin: 0 32rpx;\r\n  width: 96rpx;\r\n  height: 96rpx;\r\n  border-radius: 12px;\n}\n.main .friends .friends-list .friends-list-l i {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: -12rpx;\r\n  left: 96rpx;\r\n  min-width: 36rpx;\r\n  height: 36rpx;\r\n  border-radius: 50%;\r\n  line-height: 36rpx;\r\n  text-align: center;\r\n  background-color: #ff5d5b;\r\n  color: #ffffff;\r\n  font-size: 24rpx;\n}\n.main .friends .friends-list-r {\r\n  flex: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\n}\n.main .friends .friends-list-r .top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\n}\n.main .friends .friends-list-r .top .name {\r\n  font-size: 36rpx;\r\n  font-weight: 400;\r\n  margin-bottom: 4rpx;\n}\n.main .friends .friends-list-r .top .time {\r\n  width: 46px;\r\n  height: 17px;\r\n  font-size: 24rpx;\r\n  color: rgba(39, 40, 50, 0.4);\r\n  letter-spacing: -0.41px;\r\n  font-weight: 400;\n}\n.main .friends .friends-list-r .mes {\r\n  font-size: 28rpx;\r\n  color: rgba(39, 40, 50, 0.6);\r\n  letter-spacing: -0.48px;\r\n  font-weight: 400;\r\n  width: 260px;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n* {\r\n  margin: 0;\r\n  padding: 0;\n}\n.content {\r\n  padding-top: 34rpx;\n}\n.content .top-bar {\r\n  z-index: 50;\r\n  margin-top: var(--status-bar-height);\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 88rpx;\r\n  box-sizing: border-box;\r\n  border-bottom: 1px solid #rgba 39, 40, 50, 0.1;\n}\n.content .top-bar .top-bar-left {\r\n  margin-left: 40rpx;\n}\n.content .top-bar .top-bar-center {\r\n  flex: auto;\r\n  text-align: center;\n}\n.content .top-bar .top-bar-center .logo {\r\n  padding-top: 19rpx;\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.content .top-bar .top-bar-center .title {\r\n  font-size: 32rpx;\r\n  color: #272832;\n}\n.content .top-bar .top-bar-right .pice {\r\n  width: 88rpx;\n}\n.content .top-bar .top-bar-right .searchAuto {\r\n  width: 44rpx;\r\n  height: 44rpx;\r\n  display: inline-block;\n}\n.content .top-bar .top-bar-right uni-image {\r\n  width: 34px;\r\n  height: 34px;\r\n  border-radius: 8px;\n}\n.content .main {\r\n  padding-top: 88rpx;\r\n  width: 100%;\r\n  height: 100%;\n}\n.content .bottom-bar {\r\n  z-index: 8;\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  padding-bottom: 32rpx;\r\n  margin: env(safe-area-inset-bottom);\n}\n.content .bt1 {\r\n  margin: auto;\r\n  text-align: center;\r\n  line-height: 80rpx;\r\n  width: 684rpx;\r\n  height: 80rpx;\r\n  border-radius: 20rpx;\n}\n.top-bar {\r\n  background: rgba(244, 244, 244, 0.96);\r\n  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);\n}\n.top-bar .top-bar-left {\r\n  flex: 1;\n}\n.top-bar .top-bar-left uni-image {\r\n  padding-top: 8rpx;\r\n  width: 68rpx;\r\n  height: 68rpx;\r\n  border-radius: 16rpx;\n}\n.top-bar .top-bar-center {\r\n  margin-top: 6rpx;\r\n  flex: 1;\r\n  text-align: center;\n}\n.top-bar .top-bar-center uni-image {\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.top-bar .top-bar-right {\r\n  margin-top: 6rpx;\r\n  margin-left: 40rpx;\r\n  flex: 1;\r\n  display: flex;\n}\n.top-bar .top-bar-right .search {\r\n  flex: auto;\n}\n.top-bar .top-bar-right .search uni-image {\r\n  width: 48rpx;\r\n  height: 48rpx;\n}\n.top-bar .top-bar-right .add {\r\n  flex: auto;\n}\n.top-bar .top-bar-right .add uni-image {\r\n  width: 48rpx;\r\n  height: 48rpx;\n}\n.main .refresh {\r\n  text-align: center;\r\n  padding-top: 480rpx;\n}\n.main .refresh uni-image {\r\n  width: 32rpx;\r\n  height: 32rpx;\n}\n.main .refresh .ref-title {\r\n  padding-top: 10rpx;\r\n  font-size: 28rpx;\r\n  font-family: PingFangSC-Regular,PingFang SC;\r\n  color: rgba(39, 40, 50, 0.4);\r\n  line-height: 40rpx;\n}\n.main .noone {\r\n  text-align: center;\r\n  padding-top: 400rpx;\n}\n.main .noone uni-image {\r\n  height: 250rpx;\r\n  width: 158rpx;\n}\n.main .noone .no-title {\r\n  padding: 32rpx 0;\r\n  font-size: 28rpx;\r\n  font-family: PingFangSC-Regular,PingFang SC;\r\n  color: rgba(39, 40, 50, 0.4);\r\n  line-height: 40rpx;\n}\n.main .noone .search-bt {\r\n  display: inline-block;\r\n  width: 240rpx;\r\n  height: 96rpx;\r\n  background: #ffe431;\r\n  box-shadow: 0px 52rpx 36rpx -32rpx rgba(255, 228, 49, 0.4);\r\n  border-radius: 48rpx;\r\n  font-size: 28rpx;\r\n  font-family: PingFangSC-Regular,PingFang SC;\r\n  color: #272832;\r\n  line-height: 96rpx;\n}\n.main .friends {\r\n  padding-top: var(--status-bar-height);\r\n  background-color: #fff;\n}\n.main .friends .friends-list {\r\n  display: flex;\r\n  width: 100%;\r\n  margin: 28rpx 0;\n}\n.main .friends .friends-list:active {\r\n  background-color: #fff;\n}\n.main .friends .friends-list .friends-list-l {\r\n  position: relative;\n}\n.main .friends .friends-list .friends-list-l uni-image {\r\n  margin: 0 32rpx;\r\n  width: 96rpx;\r\n  height: 96rpx;\r\n  border-radius: 12px;\n}\n.main .friends .friends-list .friends-list-l i {\r\n  position: absolute;\r\n  z-index: 10;\r\n  top: -12rpx;\r\n  left: 96rpx;\r\n  min-width: 36rpx;\r\n  height: 36rpx;\r\n  border-radius: 50%;\r\n  line-height: 36rpx;\r\n  text-align: center;\r\n  background-color: #ff5d5b;\r\n  color: #ffffff;\r\n  font-size: 24rpx;\n}\n.main .friends .friends-list-r {\r\n  flex: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\n}\n.main .friends .friends-list-r .top {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\n}\n.main .friends .friends-list-r .top .name {\r\n  font-size: 36rpx;\r\n  font-weight: 400;\r\n  margin-bottom: 4rpx;\n}\n.main .friends .friends-list-r .top .time {\r\n  width: 46px;\r\n  height: 17px;\r\n  font-size: 24rpx;\r\n  color: rgba(39, 40, 50, 0.4);\r\n  letter-spacing: -0.41px;\r\n  font-weight: 400;\n}\n.main .friends .friends-list-r .mes {\r\n  font-size: 28rpx;\r\n  color: rgba(39, 40, 50, 0.6);\r\n  letter-spacing: -0.48px;\r\n  font-weight: 400;\r\n  width: 260px;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2068,11 +2089,13 @@ var render = function () {
                       },
                       [
                         _c(
-                          "v-uni-navigator",
+                          "uni-view",
                           {
-                            attrs: {
-                              url: "../userMessage/userMessage",
-                              _i: "11-" + $30,
+                            attrs: { _i: "11-" + $30 },
+                            on: {
+                              click: function ($event) {
+                                return _vm.$handleViewEvent($event)
+                              },
                             },
                           },
                           [
@@ -2129,6 +2152,11 @@ var render = function () {
                               {
                                 staticClass: _vm._$g("17-" + $30, "sc"),
                                 attrs: { _i: "17-" + $30 },
+                                on: {
+                                  click: function ($event) {
+                                    return _vm.$handleViewEvent($event)
+                                  },
+                                },
                               },
                               [_vm._v("加好友")]
                             )
@@ -2141,6 +2169,73 @@ var render = function () {
                 2
               )
             : _vm._e(),
+        ],
+        1
+      ),
+      _c(
+        "uni-view",
+        {
+          staticClass: _vm._$g(18, "sc"),
+          style: _vm._$g(18, "s"),
+          attrs: { animation: _vm._$g(18, "a-animation"), _i: 18 },
+        },
+        [
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+            [
+              _c(
+                "uni-view",
+                {
+                  staticClass: _vm._$g(20, "sc"),
+                  attrs: { _i: 20 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
+                  },
+                },
+                [_vm._v("取消")]
+              ),
+              _c(
+                "uni-view",
+                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
+                [_vm._v("添加好友")]
+              ),
+              _c(
+                "uni-view",
+                {
+                  staticClass: _vm._$g(22, "sc"),
+                  attrs: { _i: 22 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
+                  },
+                },
+                [_vm._v("确定")]
+              ),
+            ],
+            1
+          ),
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
+            [
+              _c("v-uni-textarea", {
+                staticClass: _vm._$g(24, "sc"),
+                attrs: { _i: 24 },
+                model: {
+                  value: _vm._$g(24, "v-model"),
+                  callback: function ($$v) {
+                    _vm.$handleVModelEvent(24, $$v)
+                  },
+                  expression: "data",
+                },
+              }),
+            ],
+            1
+          ),
         ],
         1
       ),
@@ -2242,7 +2337,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../HBuilder/HBuilderX.3.8.7.20230703/HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n* {\r\n  margin: 0;\r\n  padding: 0;\n}\n.content {\r\n  padding-top: 34rpx;\n}\n.content .top-bar {\r\n  z-index: 50;\r\n  margin-top: var(--status-bar-height);\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 88rpx;\r\n  box-sizing: border-box;\r\n  border-bottom: 1px solid #rgba 39, 40, 50, 0.1;\n}\n.content .top-bar .top-bar-left {\r\n  margin-left: 40rpx;\n}\n.content .top-bar .top-bar-center {\r\n  flex: auto;\r\n  text-align: center;\n}\n.content .top-bar .top-bar-center .logo {\r\n  padding-top: 19rpx;\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.content .top-bar .top-bar-center .title {\r\n  font-size: 32rpx;\r\n  color: #272832;\n}\n.content .top-bar .top-bar-right .pice {\r\n  width: 88rpx;\n}\n.content .top-bar .top-bar-right .searchAuto {\r\n  width: 44rpx;\r\n  height: 44rpx;\r\n  display: inline-block;\n}\n.content .top-bar .top-bar-right uni-image {\r\n  width: 34px;\r\n  height: 34px;\r\n  border-radius: 8px;\n}\n.content .main {\r\n  padding-top: 88rpx;\r\n  width: 100%;\r\n  height: 100%;\n}\n.content .bottom-bar {\r\n  z-index: 8;\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  padding-bottom: 32rpx;\r\n  margin: env(safe-area-inset-bottom);\n}\n.content .bt1 {\r\n  margin: auto;\r\n  text-align: center;\r\n  line-height: 80rpx;\r\n  width: 684rpx;\r\n  height: 80rpx;\r\n  border-radius: 20rpx;\n}\n.top-bar {\r\n  background: rgba(244, 244, 244, 0.96);\r\n  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);\n}\n.top-bar .search-div uni-input {\r\n  margin-left: 32rpx;\r\n  position: relative;\r\n  width: 600rpx;\r\n  height: 60rpx;\r\n  background: #F3F4F6;\r\n  border-radius: 10rpx;\n}\n.top-bar .search-div uni-image {\r\n  position: absolute;\r\n  padding-top: 6rpx;\r\n  left: 572rpx;\r\n  top: 20rpx;\r\n  background-color: #F3F4F6;\r\n  width: 40rpx;\r\n  height: 40rpx;\r\n  line-height: 40rpx;\n}\n.top-bar .top-bar-right span {\r\n  margin-right: 32rpx;\r\n  width: 56rpx;\r\n  height: 40rpx;\r\n  font-family: PingFangSC-Regular;\r\n  font-size: 14px;\r\n  color: #272832;\r\n  font-weight: 400;\n}\n.main .search-user .title {\r\n  margin-top: 34rpx;\r\n  padding-left: 10px;\r\n  width: 86rpx;\r\n  height: 60rpx;\r\n  font-family: PingFangSC-Semibold;\r\n  font-size: 44rpx;\r\n  letter-spacing: -0.75px;\r\n  font-weight: 600;\n}\n.main .search-user .search-user-style {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 10px;\n}\n.main .search-user .search-user-style uni-image {\r\n  margin-right: 32rpx;\r\n  width: 80rpx;\r\n  height: 80rpx;\r\n  border-radius: 10px;\n}\n.main .search-user .search-user-style .messageUser {\r\n  flex: 1;\r\n  margin: auto 0;\n}\n.main .search-user .search-user-style .messageUser .name {\r\n  font-size: 32rpx;\r\n  letter-spacing: -0.62px;\r\n  font-weight: 400;\n}\n.main .search-user .search-user-style .messageUser .email {\r\n  padding-top: 2rpx;\r\n  font-size: 24rpx;\r\n  letter-spacing: -0.62px;\r\n  font-weight: 400;\r\n  color: rgba(39, 40, 50, 0.4);\n}\n.main .search-user .search-user-style .right_bt {\r\n  margin: auto 0;\r\n  width: 120rpx;\r\n  height: 48rpx;\r\n  background: #FFE431;\r\n  text-align: center;\r\n  border-radius: 12px;\r\n  font-size: 12px;\r\n  line-height: 48rpx;\r\n  color: #272832;\r\n  letter-spacing: -0.41px;\r\n  font-weight: 500;\n}\n.main .search-user .search-user-style .send {\r\n  color: #5799ff;\r\n  background: rgba(74, 170, 255, 0.1);\n}\r\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\r\n/**\r\n * 这里是uni-app内置的常用样式变量\r\n *\r\n * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量\r\n * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App\r\n *\r\n */\r\n/**\r\n * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能\r\n *\r\n * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件\r\n */\r\n/* 颜色变量 */\r\n/* 行为相关颜色 */\r\n/* 文字基本颜色 */\r\n/* 背景颜色 */\r\n/* 边框颜色 */\r\n/* 尺寸变量 */\r\n/* 文字尺寸 */\r\n/* 图片尺寸 */\r\n/* Border Radius */\r\n/* 水平间距 */\r\n/* 垂直间距 */\r\n/* 透明度 */\r\n/* 文章场景相关 */\n* {\r\n  margin: 0;\r\n  padding: 0;\n}\n.content {\r\n  padding-top: 34rpx;\n}\n.content .top-bar {\r\n  z-index: 50;\r\n  margin-top: var(--status-bar-height);\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 88rpx;\r\n  box-sizing: border-box;\r\n  border-bottom: 1px solid #rgba 39, 40, 50, 0.1;\n}\n.content .top-bar .top-bar-left {\r\n  margin-left: 40rpx;\n}\n.content .top-bar .top-bar-center {\r\n  flex: auto;\r\n  text-align: center;\n}\n.content .top-bar .top-bar-center .logo {\r\n  padding-top: 19rpx;\r\n  width: 88rpx;\r\n  height: 42rpx;\n}\n.content .top-bar .top-bar-center .title {\r\n  font-size: 32rpx;\r\n  color: #272832;\n}\n.content .top-bar .top-bar-right .pice {\r\n  width: 88rpx;\n}\n.content .top-bar .top-bar-right .searchAuto {\r\n  width: 44rpx;\r\n  height: 44rpx;\r\n  display: inline-block;\n}\n.content .top-bar .top-bar-right uni-image {\r\n  width: 34px;\r\n  height: 34px;\r\n  border-radius: 8px;\n}\n.content .main {\r\n  padding-top: 88rpx;\r\n  width: 100%;\r\n  height: 100%;\n}\n.content .bottom-bar {\r\n  z-index: 8;\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  padding-bottom: 32rpx;\r\n  margin: env(safe-area-inset-bottom);\n}\n.content .bt1 {\r\n  margin: auto;\r\n  text-align: center;\r\n  line-height: 80rpx;\r\n  width: 684rpx;\r\n  height: 80rpx;\r\n  border-radius: 20rpx;\n}\n.top-bar {\r\n  background: rgba(244, 244, 244, 0.96);\r\n  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);\n}\n.top-bar .search-div uni-input {\r\n  margin-left: 32rpx;\r\n  position: relative;\r\n  width: 600rpx;\r\n  height: 60rpx;\r\n  background: #F3F4F6;\r\n  border-radius: 10rpx;\n}\n.top-bar .search-div uni-image {\r\n  position: absolute;\r\n  padding-top: 6rpx;\r\n  left: 572rpx;\r\n  top: 20rpx;\r\n  background-color: #F3F4F6;\r\n  width: 40rpx;\r\n  height: 40rpx;\r\n  line-height: 40rpx;\n}\n.top-bar .top-bar-right span {\r\n  margin-right: 32rpx;\r\n  width: 56rpx;\r\n  height: 40rpx;\r\n  font-family: PingFangSC-Regular;\r\n  font-size: 14px;\r\n  color: #272832;\r\n  font-weight: 400;\n}\n.main .search-user .title {\r\n  margin-top: 34rpx;\r\n  padding-left: 10px;\r\n  width: 86rpx;\r\n  height: 60rpx;\r\n  font-family: PingFangSC-Semibold;\r\n  font-size: 44rpx;\r\n  letter-spacing: -0.75px;\r\n  font-weight: 600;\n}\n.main .search-user .search-user-style {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 10px;\n}\n.main .search-user .search-user-style uni-image {\r\n  margin-right: 32rpx;\r\n  width: 80rpx;\r\n  height: 80rpx;\r\n  border-radius: 10px;\n}\n.main .search-user .search-user-style .messageUser {\r\n  flex: 1;\r\n  margin: auto 0;\n}\n.main .search-user .search-user-style .messageUser .name {\r\n  font-size: 32rpx;\r\n  letter-spacing: -0.62px;\r\n  font-weight: 400;\n}\n.main .search-user .search-user-style .messageUser .email {\r\n  padding-top: 2rpx;\r\n  font-size: 24rpx;\r\n  letter-spacing: -0.62px;\r\n  font-weight: 400;\r\n  color: rgba(39, 40, 50, 0.4);\n}\n.main .search-user .search-user-style .right_bt {\r\n  margin: auto 0;\r\n  width: 120rpx;\r\n  height: 48rpx;\r\n  background: #FFE431;\r\n  text-align: center;\r\n  border-radius: 12px;\r\n  font-size: 12px;\r\n  line-height: 48rpx;\r\n  color: #272832;\r\n  letter-spacing: -0.41px;\r\n  font-weight: 500;\n}\n.main .search-user .search-user-style .send {\r\n  color: #5799ff;\r\n  background: rgba(74, 170, 255, 0.1);\n}\n.modify {\r\n  position: fixed;\r\n  z-index: 666;\r\n  left: 0;\r\n  height: 100%;\r\n  width: 100%;\r\n  background-color: #fff;\n}\n.modify .modify-header {\r\n  width: 100%;\r\n  height: 88rpx;\r\n  padding-top: var(--status-bar-height);\r\n  display: flex;\r\n  flex-direction: row;\r\n  align-items: center;\r\n  border-bottom: 1px solid #rgba 39, 40, 50, 0.1;\n}\n.modify .modify-header .close {\r\n  padding-left: 32rpx;\r\n  font-size: 32rpx;\r\n  color: #272832;\r\n  line-height: 44px;\n}\n.modify .modify-header .title {\r\n  flex: auto;\r\n  text-align: center;\r\n  font-size: 40rpx;\r\n  color: #272832;\r\n  linetheight: 88rpx;\n}\n.modify .modify-header .define {\r\n  padding-right: 32rpx;\r\n  font-size: 32rpx;\r\n  color: #5799ff;\r\n  line-height: 44rpx;\n}\n.modify .modify-main {\r\n  display: flex;\r\n  flex-direction: column;\r\n  padding: 32rpx;\n}\n.modify .modify-main .modify-pwd {\r\n  margin-bottom: 32rpx;\r\n  padding: 0 20rpx;\r\n  box-sizing: border-box;\r\n  flex: auto;\r\n  width: 100%;\r\n  flex: auto;\r\n  height: 88rpx;\r\n  background: #e0e0e0;\r\n  border-radius: 20rpx;\r\n  font-size: 32rpx;\r\n  color: #272832;\r\n  line-height: 88rpx;\n}\n.modify .modify-main .modify-content {\r\n  padding: 16rpx 20rpx;\r\n  box-sizing: border-box;\r\n  flex: auto;\r\n  width: 100%;\r\n  height: 386rpx;\r\n  background: #e0e0e0;\r\n  border-radius: 20rpx;\r\n  font-size: 32rpx;\r\n  color: #272832;\r\n  line-height: 44rpx;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -2357,7 +2452,16 @@ var render = function () {
           _c(
             "uni-view",
             { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
-            [_c("v-uni-image", { attrs: { src: _vm._$g(5, "a-src"), _i: 5 } })],
+            [
+              _c("v-uni-image", {
+                attrs: { src: _vm._$g(5, "a-src"), _i: 5 },
+                on: {
+                  click: function ($event) {
+                    return _vm.$handleViewEvent($event)
+                  },
+                },
+              }),
+            ],
             1
           ),
         ],
@@ -2435,7 +2539,18 @@ var render = function () {
       ),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm._$g(18, "v-show"),
+              expression: "_$g(18,'v-show')",
+            },
+          ],
+          staticClass: _vm._$g(18, "sc"),
+          attrs: { _i: 18 },
+        },
         [
           _c(
             "uni-view",
@@ -2500,7 +2615,15 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+            {
+              staticClass: _vm._$g(25, "sc"),
+              attrs: { _i: 25 },
+              on: {
+                click: function ($event) {
+                  return _vm.$handleViewEvent($event)
+                },
+              },
+            },
             [_vm._v("发送")]
           ),
         ],
@@ -2759,20 +2882,22 @@ var render = function () {
                     ],
                     1
                   ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
-                    [
-                      _c("v-uni-image", {
-                        attrs: {
-                          src: _vm._$g(14, "a-src"),
-                          mode: "aspectFill",
-                          _i: 14,
-                        },
-                      }),
-                    ],
-                    1
-                  ),
+                  _vm._$g(13, "i")
+                    ? _c(
+                        "uni-view",
+                        { staticClass: _vm._$g(13, "sc"), attrs: { _i: 13 } },
+                        [
+                          _c("v-uni-image", {
+                            attrs: {
+                              src: _vm._$g(14, "a-src"),
+                              mode: "aspectFill",
+                              _i: 14,
+                            },
+                          }),
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                 ],
                 1
               ),
@@ -2800,14 +2925,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v(_vm._$g(18, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(19, "sc"), attrs: { _i: 19 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(19, "v-show"),
+                          expression: "_$g(19,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(19, "sc"),
+                      attrs: { _i: 19 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -2829,7 +2965,7 @@ var render = function () {
                   _c(
                     "uni-view",
                     { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
-                    [_vm._v("注册")]
+                    [_vm._v("时间")]
                   ),
                   _c(
                     "uni-view",
@@ -2838,14 +2974,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(24, "sc"), attrs: { _i: 24 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v(_vm._$g(24, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(25, "v-show"),
+                          expression: "_$g(25,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(25, "sc"),
+                      attrs: { _i: 25 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -2876,14 +3023,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(30, "sc"), attrs: { _i: 30 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v(_vm._$g(30, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(31, "v-show"),
+                          expression: "_$g(31,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(31, "sc"),
+                      attrs: { _i: 31 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -2989,7 +3147,18 @@ var render = function () {
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(44, "sc"), attrs: { _i: 44 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(44, "v-show"),
+                          expression: "_$g(44,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(44, "sc"),
+                      attrs: { _i: 44 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -3057,7 +3226,18 @@ var render = function () {
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(52, "sc"), attrs: { _i: 52 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(52, "v-show"),
+                          expression: "_$g(52,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(52, "sc"),
+                      attrs: { _i: 52 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -3088,14 +3268,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(57, "sc"), attrs: { _i: 57 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v(_vm._$g(57, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(58, "sc"), attrs: { _i: 58 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(58, "v-show"),
+                          expression: "_$g(58,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(58, "sc"),
+                      attrs: { _i: 58 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -3126,14 +3317,25 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(63, "sc"), attrs: { _i: 63 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v(_vm._$g(63, "t0-0"))]
                       ),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(64, "sc"), attrs: { _i: 64 } },
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm._$g(64, "v-show"),
+                          expression: "_$g(64,'v-show')",
+                        },
+                      ],
+                      staticClass: _vm._$g(64, "sc"),
+                      attrs: { _i: 64 },
+                    },
                     [
                       _c("v-uni-image", {
                         attrs: {
@@ -3150,7 +3352,18 @@ var render = function () {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(66, "sc"), attrs: { _i: 66 } },
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm._$g(66, "v-show"),
+                      expression: "_$g(66,'v-show')",
+                    },
+                  ],
+                  staticClass: _vm._$g(66, "sc"),
+                  attrs: { _i: 66 },
+                },
                 [
                   _c(
                     "uni-view",
@@ -3164,7 +3377,7 @@ var render = function () {
                       _c(
                         "uni-view",
                         { staticClass: _vm._$g(69, "sc"), attrs: { _i: 69 } },
-                        [_vm._v("45456456464545454545656dasdsadada")]
+                        [_vm._v("4545645646454")]
                       ),
                     ],
                     1
@@ -3191,7 +3404,18 @@ var render = function () {
           ),
           _c(
             "uni-view",
-            { staticClass: _vm._$g(72, "sc"), attrs: { _i: 72 } },
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm._$g(72, "v-show"),
+                  expression: "_$g(72,'v-show')",
+                },
+              ],
+              staticClass: _vm._$g(72, "sc"),
+              attrs: { _i: 72 },
+            },
             [_vm._v("退出登录")]
           ),
         ],
@@ -3281,7 +3505,7 @@ var render = function () {
                     callback: function ($$v) {
                       _vm.$handleVModelEvent(80, $$v)
                     },
-                    expression: "data",
+                    expression: "changeMyDatas",
                   },
                 },
                 [_vm._v("我是一个纯路人")]
@@ -3531,33 +3755,62 @@ var render = function () {
       _c(
         "uni-view",
         { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } },
-        [
-          _c(
+        _vm._l(_vm._$g(9, "f"), function (item, index, $20, $30) {
+          return _c(
             "uni-view",
-            { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } },
+            {
+              key: item,
+              staticClass: _vm._$g("9-" + $30, "sc"),
+              attrs: { _i: "9-" + $30 },
+            },
             [
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+                {
+                  staticClass: _vm._$g("10-" + $30, "sc"),
+                  attrs: { _i: "10-" + $30 },
+                },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
+                    {
+                      staticClass: _vm._$g("11-" + $30, "sc"),
+                      attrs: { _i: "11-" + $30 },
+                      on: {
+                        click: function ($event) {
+                          return _vm.$handleViewEvent($event)
+                        },
+                      },
+                    },
                     [_vm._v("拒绝")]
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
+                    {
+                      staticClass: _vm._$g("12-" + $30, "sc"),
+                      attrs: { _i: "12-" + $30 },
+                    },
                     [
                       _c("v-uni-image", {
-                        attrs: { src: _vm._$g(13, "a-src"), _i: 13 },
+                        attrs: {
+                          src: _vm._$g("13-" + $30, "a-src"),
+                          _i: "13-" + $30,
+                        },
                       }),
                     ],
                     1
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(14, "sc"), attrs: { _i: 14 } },
+                    {
+                      staticClass: _vm._$g("14-" + $30, "sc"),
+                      attrs: { _i: "14-" + $30 },
+                      on: {
+                        click: function ($event) {
+                          return _vm.$handleViewEvent($event)
+                        },
+                      },
+                    },
                     [_vm._v("同意")]
                   ),
                 ],
@@ -3565,16 +3818,25 @@ var render = function () {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(15, "sc"), attrs: { _i: 15 } },
+                {
+                  staticClass: _vm._$g("15-" + $30, "sc"),
+                  attrs: { _i: "15-" + $30 },
+                },
                 [
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(16, "sc"), attrs: { _i: 16 } },
-                    [_vm._v("这里是名字")]
+                    {
+                      staticClass: _vm._$g("16-" + $30, "sc"),
+                      attrs: { _i: "16-" + $30 },
+                    },
+                    [_vm._v(_vm._$g("16-" + $30, "t0-0"))]
                   ),
                   _c(
                     "uni-view",
-                    { staticClass: _vm._$g(17, "sc"), attrs: { _i: 17 } },
+                    {
+                      staticClass: _vm._$g("17-" + $30, "sc"),
+                      attrs: { _i: "17-" + $30 },
+                    },
                     [_vm._v("2020-05-01")]
                   ),
                 ],
@@ -3582,137 +3844,22 @@ var render = function () {
               ),
               _c(
                 "uni-view",
-                { staticClass: _vm._$g(18, "sc"), attrs: { _i: 18 } },
+                {
+                  staticClass: _vm._$g("18-" + $30, "sc"),
+                  attrs: { _i: "18-" + $30 },
+                },
                 [
-                  _c("v-uni-text", { attrs: { _i: 19 } }, [_vm._v("留言：")]),
-                  _vm._v("你好，想请求加为好友。谢谢你的通过,和好的。"),
+                  _c("v-uni-text", { attrs: { _i: "19-" + $30 } }, [
+                    _vm._v("留言："),
+                  ]),
+                  _vm._v(_vm._$g("18-" + $30, "t1-0")),
                 ],
                 1
               ),
             ],
             1
-          ),
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(20, "sc"), attrs: { _i: 20 } },
-            [
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(21, "sc"), attrs: { _i: 21 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(22, "sc"), attrs: { _i: 22 } },
-                    [_vm._v("拒绝")]
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(23, "sc"), attrs: { _i: 23 } },
-                    [
-                      _c("v-uni-image", {
-                        attrs: { src: _vm._$g(24, "a-src"), _i: 24 },
-                      }),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(25, "sc"), attrs: { _i: 25 } },
-                    [_vm._v("同意")]
-                  ),
-                ],
-                1
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(26, "sc"), attrs: { _i: 26 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(27, "sc"), attrs: { _i: 27 } },
-                    [_vm._v("这里是名字")]
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(28, "sc"), attrs: { _i: 28 } },
-                    [_vm._v("2020-05-01")]
-                  ),
-                ],
-                1
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(29, "sc"), attrs: { _i: 29 } },
-                [
-                  _c("v-uni-text", { attrs: { _i: 30 } }, [_vm._v("留言：")]),
-                  _vm._v("你好，想请求加为好友。谢谢你的通过,和好的。"),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-          _c(
-            "uni-view",
-            { staticClass: _vm._$g(31, "sc"), attrs: { _i: 31 } },
-            [
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(32, "sc"), attrs: { _i: 32 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(33, "sc"), attrs: { _i: 33 } },
-                    [_vm._v("拒绝")]
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(34, "sc"), attrs: { _i: 34 } },
-                    [
-                      _c("v-uni-image", {
-                        attrs: { src: _vm._$g(35, "a-src"), _i: 35 },
-                      }),
-                    ],
-                    1
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(36, "sc"), attrs: { _i: 36 } },
-                    [_vm._v("同意")]
-                  ),
-                ],
-                1
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(37, "sc"), attrs: { _i: 37 } },
-                [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(38, "sc"), attrs: { _i: 38 } },
-                    [_vm._v("这里是名字")]
-                  ),
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(39, "sc"), attrs: { _i: 39 } },
-                    [_vm._v("2020-05-01")]
-                  ),
-                ],
-                1
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(40, "sc"), attrs: { _i: 40 } },
-                [
-                  _c("v-uni-text", { attrs: { _i: 41 } }, [_vm._v("留言：")]),
-                  _vm._v("你好，想请求加为好友。谢谢你的通过,和好的。"),
-                ],
-                1
-              ),
-            ],
-            1
-          ),
-        ],
+          )
+        }),
         1
       ),
     ],
@@ -3928,7 +4075,20 @@ var render = function () {
           _c(
             "uni-view",
             { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } },
-            [_c("span", { attrs: { _i: 3 } }, [_vm._v("返回")])],
+            [
+              _c(
+                "span",
+                {
+                  attrs: { _i: 3 },
+                  on: {
+                    click: function ($event) {
+                      return _vm.$handleViewEvent($event)
+                    },
+                  },
+                },
+                [_vm._v("返回")]
+              ),
+            ],
             1
           ),
           _c(
@@ -3936,7 +4096,7 @@ var render = function () {
             { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
             [
               _c("span", { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } }, [
-                _vm._v("开心就好"),
+                _vm._v(_vm._$g(5, "t0-0")),
               ]),
             ],
             1

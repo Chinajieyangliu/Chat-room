@@ -228,8 +228,8 @@
 						latitude:res.latitude,
 						longitude:res.longitude
 					}
-					this.sendAllDatas(datas,3)
-					console.log(datas)
+					let StringDatas = JSON.stringify(datas)
+					this.sendAllDatas(StringDatas,3)
 				}
 			});
 			}

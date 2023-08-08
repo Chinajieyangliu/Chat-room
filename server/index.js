@@ -10,6 +10,11 @@ app.use(bodyParser.json({ limit: '50mb' }))
 // 获取静态路径
 app.use(express.static(__dirname + '/data'))
 app.use(cors())
+// socket,io
+const server = app.listen(8082)
+const io = require('socket.io').listen(server)
+
+require('./dao/socket_io')(io)
 // 对用户携带token的判断
 // app.use(function (req, res, next) {
 //   if (typeof req.body.token != 'undefined') {

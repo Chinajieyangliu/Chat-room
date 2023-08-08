@@ -436,7 +436,7 @@ exports.getOneMsg = function (data, res) {
 }
 // 汇总一对一消息
 exports.unreadMsg = function (data, res) {
-  let whereStr = { userID: data.uid, friendID: data.fid, state: 1 }
+  let whereStr = { userID: data.fid, friendID: data.uid, state: 1 }
   Message.countDocuments(whereStr, (err, result) => {
     if (err) {
       res.send({ status: 500 })
@@ -448,7 +448,7 @@ exports.unreadMsg = function (data, res) {
 
 // 消除未读消息
 exports.updateMsg = function (data, res) {
-  let whereStr = { userID: data.userID, friendID: data.fid, state: 1 }
+  let whereStr = { userID: data.uid, friendID: data.fid, state: 1 }
   let updatestr = { state: 0 }
   Message.updateMany(whereStr, updatestr, (err, result) => {
     if (err) {
@@ -485,10 +485,9 @@ exports.msg = function (data, res) {
     .then(function (e) {
       let result = e.map(function (item) {
         return {
-          id: item._id,
           message: item.message,
           types: item.types,
-          formId: item._id,
+          id: item.userID._id,
           imgurl: item.userID.imgurl
         }
       })

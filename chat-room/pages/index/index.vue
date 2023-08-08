@@ -90,6 +90,8 @@
 		onLoad() {
 			this.getLocationData()
 			this.getMyfriends()
+			this.join()
+			this.receiveSocketMessage()
 		},
 			onPullDownRefresh() {
 				this.requestFriends=[]
@@ -181,7 +183,7 @@
 					success:(res)=>{
 						let status = res.data.status
 						if(status == 200){
-							this.refresh=false
+							this.refresh=false 
 							let result =res.data.result
 							if(result.length>0){
 								this.noBody=false
@@ -194,7 +196,7 @@
 								}else if(result[0].types==3){
 									result[0].message = '[位置]'
 								}
-								this.$set(arr,'message',result[0].message) 
+								this.$set(arr,'message',result[0].message)
 							}else{
 								this.noBody=true
 							}
@@ -254,8 +256,35 @@
 				uni.navigateTo({
 					url: '/pages/chatRoom/chatRoom?id='+item.id+'&name='+item.name+'&img='+item.imgurl+'&type='+item.type
 				})
-			}
-			
+			},
+			// 开局获取聊天记录
+			join(){
+				this.socket.emit('login',this.userMessages.uid)
+			},
+			// 接收scoket的信息
+			receiveSocketMessage(){
+				let message =''
+				this.socket.on('msg',(msg,fromId)=>{
+					if(msg.types== 0){
+						message = msg.message
+					}else if(msg.types==1){
+						message = '[图片]'
+					}else if(msg.types == 2){
+						message = '[音频]'
+					}else if(msg.types==3){
+						message = '[位置]'
+					}
+					for(let i=0;i<this.requestFriends.length;i++){
+						if(this.requestFriends[i].id==fromId){
+							let e = this.requestFriends[i]
+							e.message = message
+							e.tip++
+							this.requestFriends.splice(i,1)
+							this.requestFriends.push(e)
+						}
+					}
+				})
+			},
 		}
 	}
 </script>

@@ -19,7 +19,7 @@
 					</view>
 					<view class="chat-list" v-for="item,index in chatDatas" :key="index" :id="`msg${index}`">
 						<view class="chat-time">2020.06.07</view>
-						<view class="mes-m mesg-left" v-show="item.id !=userMessages.uid">
+						<view class="mes-m mesg-left" v-show="item.id != userMessages.uid">
 							<image class="user-img" src="../../static/images/userMessage/one.webp"></image>
 							<view class="message" v-if="item.types==0">
 								<view class="msg-text">{{ item.message }}</view>
@@ -43,8 +43,8 @@
 							</view>
 						</view>
 						
-						<view class="mes-m mesg-right" v-show="item.id ==userMessages.uid">
-							<image class="user-img" :src="`../../static/images/userMessage/${item.imgurl}`"></image>
+						<view class="mes-m mesg-right" v-show="item.id == userMessages.uid">
+							<image class="user-img" src="../../static/images/userMessage/one.webp"></image>
 							<!-- 文字信息 -->
 							<view class="message" v-if="item.types==0">
 								<view class="msg-text">{{item.message}}</view>
@@ -92,7 +92,7 @@
 				animationData: {},
 				isShowLoadingImg:false,
 				newPages:0,
-				pageSize:10,
+				pageSize:7,
 				IntervalId:0,
 				userMessages:{
 					uid:'',
@@ -116,7 +116,8 @@
 			this.chatMessage.img = e.img
 			this.chatMessage.name = e.name
 			this.chatMessage.type = e.type
-			this.initData();
+			this.initData()
+			this.receiveSocketMessage()
 		},
 		components:{
 			submit
@@ -141,6 +142,27 @@
 					// error
 				}
 			},
+			// 开局加载聊天数据
+			onShowLoading(){
+				clearInterval(this.IntervalId)
+				if(this.newPages>0){
+					this.isShowLoadingImg=true
+					let animation = uni.createAnimation({
+						duration: 1000,
+						timingFunction: 'step-start',
+					})
+					let i=1
+					this.IntervalId = setInterval(function(){
+					  animation.rotate(i*30).step()
+					  this.animationData = animation.export()
+					  i++
+					  if(i>20){
+						 this.initData()
+					  }
+					}.bind(this), 200)
+				}
+			
+			},
 			initData(){
 				uni.request({
 					url:this.$http+'/chat/msg',
@@ -159,20 +181,24 @@
 							let count = 0
 							let page = 0
 							let maxpages=arr.length
-							if(arr.length>(page+1)*5){
-								maxpages=(page+1)*5
+							if(arr.length>(page+1)*6){
+								maxpages=(page+1)*6
 								this.newPages++
 							}else{
+								maxpages=arr.length
 								this.newPages=-1
 							}
-							for(let i=page*5;i<maxpages; i++){
+							for(let i=page*6;i<maxpages; i++){
 								if(arr[i].types==1){
-									this.sendImgMessage.unshift(`../../static/images/userMessage/${arr[i].message}`)
-									arr[i].message = `../../static/images/userMessage/${arr[i].message}`
+									this.sendImgMessage.unshift(arr[i].message)
+									arr[i].message = arr[i].message
 								}
-								
+								if(arr[i].types==3){
+									arr[i].message = JSON.parse(arr[i].message)
+								}
 								this.chatDatas.unshift(arr[i])
 								count++
+								page++
 							}
 							this.tagIndex=`msg${count-1}`
 							clearInterval(this.IntervalId)
@@ -212,19 +238,96 @@
 				});
 			},
 			getInputData(e){
-				let data = {
-					id:'a', 	//用户id
-					imgurl: 'two.webp',
-					message:e.message,
-					types: e.types,//内容类型 (0文字，1图片链接，2音频链接.··
-					time: new Date()-1000*280,  	//发送时间
-					tip:6
+				// 提价前数据处理
+				if(e.types==0 || e.types==3){
+					this.sendSocket(e)
 				}
-				this.chatDatas.push(data)
 				if(e.types == 1){
 					this.sendImgMessage.push(e.message)
+					const uploadTask = uni.uploadFile({
+						url: 'http://localhost:3000/files/upload', //仅为示例，非真实的接口地址
+						filePath: e.message,
+						name: 'file',
+						formData: {
+							url:'userImgage' ,
+							name:new Date().getTime()+"userImage"+this.chatMessage.uid
+						},
+						success: (uploadFileRes) => {
+							let data ={
+								message:uploadFileRes.data,
+								types :e.types
+							}
+							this.sendSocket(data)
+						}
+					});
 				}
+				if(e.types == 2){
+					const uploadTask = uni.uploadFile({
+						url: 'http://localhost:3000/files/upload', //仅为示例，非真实的接口地址
+						filePath: e.message.voice,
+						name: 'file',
+						formData: {
+							url:'userAudio' ,
+							name:new Date().getTime()+"userAudio"+this.chatMessage.uid
+						},
+						success: (uploadFileRes) => {
+							let data ={
+								message:uploadFileRes.data,
+								types :e.types
+							}
+							this.sendSocket(data)
+						}
+					});
+				}
+				// 提交数据处理结束
+				if(e.types == 3){
+					e.message = JSON.parse(e.message)
+				}
+				let data = {
+					id:this.userMessages.uid, 	//用户id
+					imgurl: 'two.webp',
+					message:e.message,
+					types: e.types,//内容类型 (0文字，1图片链接，2音频链接. 3.地图数据··
+					time: new Date()-1000*280,  	//发送时间
+				}
+				this.chatDatas.push(data)
+
 				this.scroolBottom()
+			},
+			// 当消息类型为0时触发的事假
+			sendSocket(e){
+				// if(this.type == 0){
+					if(e.types == 1 || e.types == 2){
+						e.message = 'http://localhost:3000/userImgage/'+e.message
+					}
+					this.socket.emit('msg',e,this.userMessages.uid,this.chatMessage.uid)
+				// }else{
+				// 	this.socket.emit('groupMsg',e,this.chatMessage.uid,this.userMessages.uid)
+				// }
+			},
+			// 接收发送消息并将消息数据进行渲染
+			receiveSocketMessage(){
+				this.socket.on('msg',(msg,fromId,tip)=>{
+
+				if(this.chatMessage.uid == fromId && tip==1){
+
+					let data = {
+						id:fromId, 	//用户id
+						imgurl: 'two.webp',
+						message:msg.message,
+						types: msg.types,//内容类型 (0文字，1图片链接，2音频链接.··
+						time: new Date()-1000*280,  	//发送时间
+					}
+					this.chatDatas.push(data)
+					if(msg.types == 1){
+						this.sendImgMessage.unshift(msg.message)
+					}
+					if(msg.types == 2){
+						this.sendImgMessage.push(msg.message)
+					}
+					this.scroolBottom()
+				}
+				})
 			},
 			getInputHeight(e){
 				this.mainHeight=e
@@ -264,34 +367,13 @@
 					}
 				});
 			},
-			// 开局加载聊天数据
-			onShowLoading(){
-				clearInterval(this.IntervalId)
-				if(this.newPages>0){
-					this.isShowLoadingImg=true
-					var animation = uni.createAnimation({
-						duration: 1000,
-						timingFunction: 'step-start',
-					})
-					let i=1
-					this.IntervalId = setInterval(function(){
-					  animation.rotate(i*30).step()
-					  this.animationData = animation.export()
-					  i++
-					  if(i>20){
-						 this.initData(this.newPages)
-					  }
-					}.bind(this), 200)
-				}else{
-				}
 
-			},
 			backOne(){
 				uni.navigateBack({
 					delta: 1
 				});
 			}
-
+			
 		}
 	}
 </script>
